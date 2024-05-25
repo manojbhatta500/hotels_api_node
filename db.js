@@ -18,9 +18,18 @@ db.on('connected',()=>{
     console.log('database is connected');
 });
 
-db.on('err',(err)=>{
-    console.log('database failed to connect.'+ err);
-})
+mongoose.connection.on('error', (err) => {
+    console.log('Mongoose connection error: ' + err);
+  });
+
+
+db.on('disconnected', () => {
+    console.log('Mongoose disconnected');
+});
+  
+db.on('reconnected', () => {
+    console.log('Mongoose reconnected');
+});
 
 
 
