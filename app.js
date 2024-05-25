@@ -28,5 +28,5 @@ app.use('/menu',menuRouter);
 const port = process.env.PORT || 3000;
 
 app.listen(port,()=>{
-    console.log("server is running in port 3000")
+    console.log("server is running in port {changed}",port)
 })
