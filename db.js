@@ -1,8 +1,12 @@
 
 const mongoose = require('mongoose');
+require('dotenv').config();
+// for local setup 
+// const mongoUrl= "mongodb://127.0.0.1:27017/";
 
+// mongodb atlas setup
 
-const mongoUrl= "mongodb://127.0.0.1:27017/";
+const mongoUrl= process.env.MONGOURL;
 
 
 mongoose.connect(mongoUrl,{});
